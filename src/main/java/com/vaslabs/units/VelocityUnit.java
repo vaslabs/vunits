@@ -4,7 +4,7 @@ package com.vaslabs.units;
 /**
  * Created by vnicolaou on 07/08/15.
  */
-public class VelocityUnit {
+public final class VelocityUnit {
 
     public final DistanceUnit DISTANCE_UNIT;
     public final TimeUnit TIME_UNIT;
