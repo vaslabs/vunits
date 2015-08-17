@@ -25,6 +25,11 @@ public enum DistanceUnit {
             return m;
         }
 
+        @Override
+        public double toMiles(double m) {
+            return m/(CM*CKM);
+        }
+
     }, FEET("ft") {
         @Override
         public double toKm(double ft) {
@@ -39,6 +44,11 @@ public enum DistanceUnit {
         @Override
         public double toMeters(double ft) {
             return ft/CF;
+        }
+
+        @Override
+        public double toMiles(double feet) {
+            return feet/(CF*CKM*CM);
         }
 
         @Override
@@ -62,8 +72,38 @@ public enum DistanceUnit {
         }
 
         @Override
+        public double toMiles(double km) {
+            return km/CM;
+        }
+
+        @Override
         public double convert(DistanceUnit distanceUnit, double distance_value) {
             return distanceUnit.toKm(distance_value);
+        }
+    }, MILES("miles") {
+        @Override
+        public double toKm(double miles) {
+            return miles*CM;
+        }
+
+        @Override
+        public double toFeet(double miles) {
+            return miles*CM*1000*CF;
+        }
+
+        @Override
+        public double toMeters(double miles) {
+            return miles*CM*1000;
+        }
+
+        @Override
+        public double toMiles(double miles) {
+            return miles;
+        }
+
+        @Override
+        public double convert(DistanceUnit distanceUnit, double distance_value) {
+            return distanceUnit.toMiles(distance_value);
         }
     };
 
@@ -71,10 +111,13 @@ public enum DistanceUnit {
 
     public final double CF = 3.2808399;
     public final double CKM = 1000;
+    public final double CM = 1.609344;
 
     public abstract double toFeet(double m);
 
     public abstract double toMeters(double distance_value);
+
+    public abstract double toMiles(double distance_value);
 
     public final String signature;
 

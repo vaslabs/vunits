@@ -81,4 +81,28 @@ public class TestVelocityUnit extends TestCase {
 
         assertEquals(0, metersPerSecond.DISTANCE_VALUE, DIFF);
     }
+
+    public void test_km_per_hour_to_miles_per_hour() {
+        double kmPerHourValue = 203;
+        VelocityUnit kmPerHour = new VelocityUnit(DistanceUnit.KM, TimeUnit.HOURS, kmPerHourValue);
+
+        VelocityUnit metersPerSecond = kmPerHour.convert(DistanceUnit.MILES, TimeUnit.HOURS);
+
+        assertEquals(126.13835202417879, metersPerSecond.DISTANCE_VALUE, DIFF);
+
+
+        kmPerHourValue = 0.3;
+        kmPerHour = new VelocityUnit(DistanceUnit.KM, TimeUnit.HOURS, kmPerHourValue);
+
+        metersPerSecond = kmPerHour.convert(DistanceUnit.MILES, TimeUnit.HOURS);
+
+        assertEquals(0.186411, metersPerSecond.DISTANCE_VALUE, DIFF);
+
+        kmPerHourValue = 0;
+        kmPerHour = new VelocityUnit(DistanceUnit.KM, TimeUnit.HOURS, kmPerHourValue);
+
+        metersPerSecond = kmPerHour.convert(DistanceUnit.MILES, TimeUnit.HOURS);
+
+        assertEquals(0, metersPerSecond.DISTANCE_VALUE, DIFF);
+    }
 }
