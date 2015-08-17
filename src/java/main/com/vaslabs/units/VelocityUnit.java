@@ -1,23 +1,23 @@
-package com.vaslabs.sdc.units;
+package com.vaslabs.units;
 
 
 /**
  * Created by vnicolaou on 07/08/15.
  */
-public class CompositeUnit {
+public class VelocityUnit {
 
     public final DistanceUnit DISTANCE_UNIT;
     public final TimeUnit TIME_UNIT;
 
     public final double DISTANCE_VALUE;
 
-    public CompositeUnit(DistanceUnit distance_unit, TimeUnit time_unit, double distance_value) {
+    public VelocityUnit(DistanceUnit distance_unit, TimeUnit time_unit, double distance_value) {
         DISTANCE_UNIT = distance_unit;
         TIME_UNIT = time_unit;
         DISTANCE_VALUE = distance_value;
     }
 
-    public CompositeUnit convert(DistanceUnit distance_unit, TimeUnit time_unit) {
+    public VelocityUnit convert(DistanceUnit distance_unit, TimeUnit time_unit) {
 
         if (distance_unit == DISTANCE_UNIT && TIME_UNIT == time_unit)
             return this;
@@ -28,7 +28,7 @@ public class CompositeUnit {
 
         double newDistanceValue = distance_unit.convert(DISTANCE_UNIT, newTotalDistance);
 
-        return new CompositeUnit(distance_unit, time_unit, newDistanceValue);
+        return new VelocityUnit(distance_unit, time_unit, newDistanceValue);
 
     }
 

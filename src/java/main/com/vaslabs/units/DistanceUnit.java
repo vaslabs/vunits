@@ -1,4 +1,4 @@
-package com.vaslabs.sdc.units;
+package com.vaslabs.units;
 
 /**
  * Created by vnicolaou on 07/08/15.
@@ -69,7 +69,7 @@ public enum DistanceUnit {
 
     public abstract double toKm(double km);
 
-    public final double CF = 3.2808;
+    public final double CF = 3.2808399;
     public final double CKM = 1000;
 
     public abstract double toFeet(double m);
