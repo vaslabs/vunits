@@ -15,3 +15,33 @@
 	        compile 'com.github.vaslabs:vunits:0.1.2'
 	}
 ```
+
+# Units supported:
+
+## Distance
+* Meters
+* Feet
+* Kilometers
+* Miles
+
+## Time
+* Milliseconds
+* Seconds
+* Minutes
+* Hours
+* Days
+
+## Velocity
+Combine any one from distance with one from time
+
+## Pressure
+
+### Tested
+* PSI
+* ATM
+* hPa
+
+### Untested
+* Pascal
+* Torr
+* AT
