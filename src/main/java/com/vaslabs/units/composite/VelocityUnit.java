@@ -1,5 +1,8 @@
-package com.vaslabs.units;
+package com.vaslabs.units.composite;
 
+
+import com.vaslabs.units.DistanceUnit;
+import com.vaslabs.units.TimeUnit;
 
 /**
  * Created by vnicolaou on 07/08/15.

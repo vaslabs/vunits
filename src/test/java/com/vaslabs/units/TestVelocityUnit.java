@@ -1,4 +1,5 @@
 package com.vaslabs.units;
+import com.vaslabs.units.composite.VelocityUnit;
 import junit.framework.TestCase;
 
 import static com.vaslabs.units.TestConstants.DIFF;
