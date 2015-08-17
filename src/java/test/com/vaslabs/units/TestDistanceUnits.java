@@ -2,12 +2,11 @@ package com.vaslabs.units;
 
 import junit.framework.TestCase;
 
+import static com.vaslabs.units.TestConstants.DIFF;
 /**
  * Created by nicolaouv on 8/17/15.
  */
 public class TestDistanceUnits extends TestCase {
-
-    static final double DIFF = 0.000001;
 
     public void setUp() {
 
