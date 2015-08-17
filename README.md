@@ -12,6 +12,6 @@
 
 ```javascript
   	dependencies {
-	        compile 'com.github.vaslabs:vunits:0.1'
+	        compile 'com.github.vaslabs:vunits:0.1.1'
 	}
 ```
