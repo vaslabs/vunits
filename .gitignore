@@ -10,7 +10,7 @@ gen/
 .gradle/
 build/
 
-
+local.properties
 
 .idea/
 gradle/

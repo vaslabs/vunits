@@ -10,22 +10,62 @@
 /*
 // Apply the java plugin to add support for Java
 */
-apply plugin: 'java'
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'http://maven.livotovlabs.pro/content/groups/public/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.0'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/tests/java']
+            res.srcDirs = ['src/main/res', 'src/tests/res/']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
-    // Use 'jcenter' for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
+    maven { url '// Use \'jcenter\' for resolving your dependencies.' }
+    maven { url '// You can declare any Maven/Ivy/file repository here.' }
     jcenter()
 }
 
 dependencies {
     // The production code uses the SLF4J logging API at compile time
-
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
-    testCompile "junit:junit:4.11"
+    testCompile 'junit:junit:4.11'
 }
 
